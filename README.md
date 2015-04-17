@@ -22,18 +22,17 @@ see your app dir. looks like
 .
 ├── README.md
 ├── app
-│   ├── index.html
+│   ├── index.html // entry html file
 │   ├── js
-│   │   ├── cljsbuild-main.js
+│   │   ├── cljsbuild-main.js // compiled JavaScript
 │   │   ├── externs.js
-│   │   ├── main-original.js
 │   │   └── main.js
-│   └── package.json
-├── package.json
-├── project.clj
+│   └── package.json // for Desktop app
+├── package.json // for Compile
+├── project.clj // compile settings desktop app
 └── src
     └── NAMESPACE
-        └── core.cljs
+        └── core.cljs // ClojureScript in here
 ```
 
 ## Build your atom app
