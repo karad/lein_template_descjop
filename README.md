@@ -87,6 +87,9 @@ On OS X:
 $ ./atom-shell/Atom.app/Contents/MacOS/Atom app
 ```
 
+![Desktop Application pic](https://raw.github.com/wiki/karad/lein_template_descjop/man/images/foo.png
+)
+
 ## License
 
 Copyright ©  Kazuhiro Hara (Greative LLC http://greative.jp/)
