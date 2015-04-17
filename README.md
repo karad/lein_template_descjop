@@ -3,6 +3,8 @@
 A Leiningen template for Web based desktop application with atom-shell and others.
 (now atom-shell based only. will build nw.js based later...)
 
+[![Clojars Project](http://clojars.org/descjop/lein-template/latest-version.svg)](http://clojars.org/descjop/lein-template)
+
 ## Requirements
 
 * leiningen 2.x +
