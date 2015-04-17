@@ -11,7 +11,7 @@ A Leiningen template for Web based desktop application with atom-shell and other
 ## Usage
 
 ```
-$ lein new lein-template-descjop YOUR_APP_NAME
+$ lein new descjop YOUR_APP_NAME
 ```
 
 see your app dir. looks like

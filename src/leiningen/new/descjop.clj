@@ -1,14 +1,14 @@
-(ns leiningen.new.lein-template-descjop
-  "Generate a basic atom-shhell application project."
+(ns leiningen.new.descjop
+  "Generate a basic atom-shell application project."
   (:require [leiningen.new.templates :refer [renderer year project-name
                                                ->files sanitize-ns name-to-path
                                                multi-segment]]
             [leiningen.core.main :as main]))
 
-(defn lein-template-descjop
+(defn descjop
   "An Atom-shhell application project template."
   [name]
-  (let [render (renderer "lein-template-descjop")
+  (let [render (renderer "descjop")
         main-ns (multi-segment (sanitize-ns name))
         data {:raw-name name
               :name (project-name name)
@@ -16,7 +16,7 @@
               :namespace main-ns
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
-    (main/info "Generating fresh 'lein new' lein-template-descjop project.")
+    (main/info "Generating fresh 'lein new' descjop project.")
     (->files  data
               ["app/index.html" (render "app__index.html" data)]
               ["app/js/externs.js" (render "app__js__externs.js" data)]
