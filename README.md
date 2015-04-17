@@ -87,7 +87,7 @@ On OS X:
 $ ./atom-shell/Atom.app/Contents/MacOS/Atom app
 ```
 
-![Desktop Application pic](https://raw.github.com/wiki/karad/lein_template_descjop/man/images/foo.png
+![Desktop Application pic](https://raw.github.com/wiki/karad/lein_template_descjop/man/images/app.png
 )
 
 ## License
