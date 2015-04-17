@@ -90,6 +90,6 @@ $ ./atom-shell/Atom.app/Contents/MacOS/Atom app
 
 Copyright ©  Kazuhiro Hara (Greative LLC http://greative.jp/)
 {:mail kazuhiroh@gmail.com
- :twitter @kara_d}
+ :twitter https://twitter.com/kara_d}
 
 Distributed under the MIT License http://opensource.org/licenses/MIT .
