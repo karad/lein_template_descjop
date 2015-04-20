@@ -1,3 +1,6 @@
+![logo descjop](man/images/app.png)
+
+
 # lein-template-descjop
 
 A Leiningen template for Web based desktop application with atom-shell and others.
@@ -87,8 +90,7 @@ On OS X:
 $ ./atom-shell/Atom.app/Contents/MacOS/Atom app
 ```
 
-![Desktop Application pic](man/images/app.png
-)
+![Desktop Application pic](man/images/app.png)
 
 ## License
 
