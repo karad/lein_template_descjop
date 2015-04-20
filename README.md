@@ -1,4 +1,4 @@
-![logo descjop](man/images/app.png)
+![logo descjop](man/images/logo.png)
 
 
 # lein-template-descjop
