@@ -2,13 +2,13 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    "download-atom-shell": {
-      version: "0.23.0",
-      outputDir: "./atom-shell",
+    "download-electron": {
+      version: "0.24.0",
+      outputDir: "./electron",
       rebuild: true
     }
   });
 
-  grunt.loadNpmTasks('grunt-download-atom-shell');
+  grunt.loadNpmTasks('grunt-download-electron');
 
 };

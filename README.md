@@ -3,8 +3,8 @@
 
 # lein-template-descjop
 
-A Leiningen template for Web based desktop application with atom-shell and others.
-(now atom-shell based only. will build nw.js based later...)
+A Leiningen template for Web based desktop application with Electron(atom-shell) and others.
+(now Electron(atom-shell) based only. will build nw.js based later...)
 
 [![Clojars Project](http://clojars.org/descjop/lein-template/latest-version.svg)](http://clojars.org/descjop/lein-template)
 
@@ -38,7 +38,7 @@ see your app dir. looks like
         └── core.cljs // ClojureScript in here
 ```
 
-## Build your atom app
+## Build your Electron(Atom-Shell) app
 
 ### step 1
 
@@ -47,9 +47,9 @@ run npm command below.
 ```
 $ npm install -g grunt-cli
 $ npm install
-$ grunt download-atom-shell
+$ grunt download-electron
 
-Running "download-atom-shell" task
+Running "download-electron" task
 
 Done, without errors.
 ```
@@ -70,27 +70,35 @@ Compiling "app/js/cljsbuild-main.js" from ["src"]...
 Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
 ```
 
-so you can run atom-shell app.
+so you can run Electron(Atom-Shell) app.
 
 On Windows:
 
 ```
-$ .\atom-shell\atom.exe app
+$ .\electron\electron.exe app
 ```
 
 On Linux:
 
 ```
-$ ./atom-shell/atom app
+$ ./electron/electron app
 ```
 
 On OS X:
 
 ```
-$ ./atom-shell/Atom.app/Contents/MacOS/Atom app
+$ ./electron/Electron.app/Contents/MacOS/Electron app
 ```
 
 ![Desktop Application pic](man/images/app.png)
+
+## Change log
+
+### 0.1.1 (2015-04-20)
+
+Bugfixes:
+
+- change grunt task from atom-shell to electron (#1, @karad)
 
 ## License
 

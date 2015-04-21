@@ -1,5 +1,5 @@
 (defproject descjop/lein-template "0.1.0"
-  :description "A Leiningen template for Web based desktop application with atom-shell and others. (now atom-shell based only. will build nw.js based later...)"
+  :description "A Leiningen template for Web based desktop application with Electron(atom-shell) and others. (now Electron(atom-shell) based only. will build nw.js based later...)"
   :url "https://github.com/karad/lein_template_descjop"
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}

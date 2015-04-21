@@ -1,13 +1,13 @@
 (ns leiningen.new.descjop
-  "Generate a basic atom-shell application project."
+  "Generate a basic Electron(atom-shell) application project."
   (:require [leiningen.new.templates :refer [renderer year project-name
                                                ->files sanitize-ns name-to-path
                                                multi-segment]]
             [leiningen.core.main :as main]))
 
 (defn descjop
-  "An Atom-shhell application project template."
-  [name]
+  "An Electron(atom-shell) application project template."
+  [name & params]
   (let [render (renderer "descjop")
         main-ns (multi-segment (sanitize-ns name))
         data {:raw-name name
