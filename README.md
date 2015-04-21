@@ -94,6 +94,12 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.1.2 (2015-04-22)
+
+Bugfixes:
+
+- change calling how to index.html path (#2, @karad)
+
 ### 0.1.1 (2015-04-20)
 
 Bugfixes:
