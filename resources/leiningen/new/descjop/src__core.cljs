@@ -27,7 +27,7 @@
    (.on app "ready"
      (fn []
        (reset! *win* (BrowserWindow. (clj->js {:width 800 :height 600})))
-       (.loadUrl @*win* (str "file://" (.resolve path "") "/app/index.html"))
+       (.loadUrl @*win* (str "file://" (.resolve path (js* "__dirname") "../index.html")))
        (.on @*win* "closed" (fn [] (reset! *win* nil))))))
 
 (nodejs/enable-util-print!)
