@@ -6,7 +6,7 @@
 A Leiningen template for Web based desktop application with Electron(atom-shell) and others.
 (now Electron(atom-shell) based only. will build nw.js based later...)
 
-Website : [descjop.org/](http://descjop.org/)
+**Website : [descjop.org/](http://descjop.org/)**
 
 [![Clojars Project](http://clojars.org/descjop/lein-template/latest-version.svg)](http://clojars.org/descjop/lein-template)
 
