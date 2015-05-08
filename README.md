@@ -96,6 +96,13 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.1.3 (2015-05-08)
+
+Changes:
+
+- update Electron version 0.24.0 to 0.25.3
+- update grunt-download-electron to 2.1.1
+
 ### 0.1.2 (2015-04-22)
 
 Bugfixes:
