@@ -36,8 +36,8 @@ see your app dir. looks like
 ├── package.json // for Compile
 ├── project.clj // compile settings desktop app
 └── src
-    └── NAMESPACE
-        └── core.cljs // ClojureScript in here
+	└── NAMESPACE
+		└── core.cljs // ClojureScript in here
 ```
 
 ## Build your Electron(Atom-Shell) app
@@ -95,6 +95,12 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 ![Desktop Application pic](man/images/app.png)
 
 ## Change log
+
+### 0.1.5 (2015-05-22)
+
+Changes:
+
+- update Electron version 0.26.0 to 0.26.1
 
 ### 0.1.4 (2015-05-16)
 
