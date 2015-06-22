@@ -96,6 +96,12 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.1.8 (2015-06-22)
+
+Changes:
+
+- update Electron version 0.28.1 to 0.28.2
+
 ### 0.1.7 (2015-06-16)
 
 Changes:
