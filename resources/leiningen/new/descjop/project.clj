@@ -3,8 +3,8 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-3195" :exclusions [org.apache.ant/ant]]]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.28" :exclusions [org.apache.ant/ant]]]
   :plugins [[lein-cljsbuild "1.0.5"]
             [lein-externs "0.1.3"]]
   :source-paths ["src"]
@@ -25,13 +25,18 @@
                                     :elide-asserts true
                                     :target :nodejs
 
+                                    ;; no optimize compile (dev)
+                                    ;;:optimizations :none
+                                    ;; when no optimize uncomment
+                                    ;;:output-dir "app/js/out"
+
                                     ;; simple compile (dev)
-                                    ;:optimizations :simple
+                                    :optimizations :simple
 
                                     ;; advanced compile (prod)
-                                    :optimizations :advanced
+                                    ;:optimizations :advanced
 
                                     ;:source-map "app/js/test.js.map"
                                     :pretty-print true
-                                    :output-wrapper false
+                                    :output-wrapper true
                                     }}}})

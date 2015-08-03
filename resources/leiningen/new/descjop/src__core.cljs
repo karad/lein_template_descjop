@@ -27,7 +27,12 @@
    (.on app "ready"
      (fn []
        (reset! *win* (BrowserWindow. (clj->js {:width 800 :height 600})))
+
+       ;; when no optimize comment out
        (.loadUrl @*win* (str "file://" (.resolve path (js* "__dirname") "../index.html")))
+       ;; when no optimize uncomment
+       ;; (.loadUrl @*win* (str "file://" (.resolve path (js* "__dirname") "../../../index.html")))
+
        (.on @*win* "closed" (fn [] (reset! *win* nil))))))
 
 (nodejs/enable-util-print!)
