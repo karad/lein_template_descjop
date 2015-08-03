@@ -96,11 +96,14 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
-### 0.2.0 (2015-07-21)
+### 0.2.0 (2015-08-03)
 
 Changes:
 
-- update Electron version 0.28.2 to 0.30.0
+- support :optimization :none
+- update clojure -> 1.7.0
+- update clojurescript -> 1.7.28
+- update electron -> 0.30.2
 
 ### 0.1.8 (2015-06-22)
 
