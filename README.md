@@ -96,6 +96,14 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.2.1 (2015-09-03)
+
+Changes:
+
+- update clojurescript -> 1.7.48
+- update electron -> 0.31.2
+- update grunt-download-electron -> 2.1.2
+
 ### 0.2.0 (2015-08-03)
 
 Changes:
