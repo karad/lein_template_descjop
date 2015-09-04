@@ -15,7 +15,7 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 * leiningen 2.x +
 * node v0.12.x +
 
-## Usage
+## Usage : Default project
 
 ```
 $ lein new descjop YOUR_APP_NAME
@@ -38,6 +38,35 @@ see your app dir. looks like
 └── src
 	└── NAMESPACE
 		└── core.cljs // ClojureScript in here
+```
+
+## Usage : Om based project 
+
+```
+$ lein new descjop YOUR_APP_NAME +om
+```
+
+see your app dir. looks like
+
+```
+.
+├── README.md
+├── app
+│   ├── index.html // entry html file
+│   ├── js
+│   │   ├── cljsbuild-main.js // compiled JavaScript
+│   │   ├── externs.js
+│   │   ├── front.js
+│   │   └── main.js
+│   └── package.json // for Desktop app
+├── package.json // for Compile
+├── project.clj // compile settings desktop app
+├── src
+│└── NAMESPACE
+│	└── core.cljs // ClojureScript in here
+└── src_front
+	└── NAMESPACE_om
+		└── core.cljs // Frontend clojureScript in here
 ```
 
 ## Build your Electron(Atom-Shell) app
@@ -95,6 +124,12 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 ![Desktop Application pic](man/images/app.png)
 
 ## Change log
+
+### 0.3.0 (2015-09-05)
+
+Changes:
+
+- add +om option
 
 ### 0.2.1 (2015-09-03)
 
