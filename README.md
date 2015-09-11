@@ -25,22 +25,22 @@ see your app dir. looks like
 
 ```
 .
-├── README.md
-├── app
-│   ├── index.html // entry html file
-│   ├── js
-│   │   ├── cljsbuild-main.js // compiled JavaScript
-│   │   ├── externs.js
-│   │   └── main.js
-│   └── package.json // for Desktop app
-├── package.json // for Compile
-├── project.clj // compile settings desktop app
-└── src
-	└── NAMESPACE
-		└── core.cljs // ClojureScript in here
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+    +-- NAMESPACE
+        +-- core.cljs // ClojureScript in here
 ```
 
-## Usage : Om based project 
+## Usage : [Om](https://github.com/omcljs/om) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +om
@@ -50,24 +50,23 @@ see your app dir. looks like
 
 ```
 .
-├── README.md
-├── app
-│   ├── index.html // entry html file
-│   ├── js
-│   │   ├── cljsbuild-main.js // compiled JavaScript
-│   │   ├── externs.js
-│   │   ├── front.js
-│   │   └── main.js
-│   └── package.json // for Desktop app
-├── package.json // for Compile
-├── project.clj // compile settings desktop app
-├── src
-│└── NAMESPACE
-│	└── core.cljs // ClojureScript in here
-└── src_front
-	└── NAMESPACE_om
-		└── core.cljs // Frontend clojureScript in here
-```
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+|   +-- NAMESPACE
+|       +-- core.cljs // ClojureScript for Electron in here
++-- src_front
+    +--NAMESPACE_om
+       +-- core.cljs // Frontend clojureScript in here
+
 
 ## Build your Electron(Atom-Shell) app
 
@@ -125,11 +124,18 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.3.1 (2015-09-10)
+
+Changes:
+
+- update electron -> 0.32.2
+
+
 ### 0.3.0 (2015-09-05)
 
 Changes:
 
-- add +om option
+- add +om option. [Om](https://github.com/omcljs/om) based template support.
 
 ### 0.2.1 (2015-09-03)
 
