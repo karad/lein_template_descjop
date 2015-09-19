@@ -5,6 +5,8 @@
                                              multi-segment]]
             [leiningen.core.main :as main]))
 
+(declare help-text)
+
 (defn project-default
   "default descjop template."
   [name]
@@ -67,8 +69,115 @@
 (defn descjop
   "An Electron(atom-shell) application project template."
   [name & params]
-  (condp = (first params)
-    "+om" (project-om name)
-    (project-default name)))
+  (cond
+    (= name "help") (println help-text)
+    (= (first params) "+om") (project-om name)
+    :else (project-default name)))
 
+(def help-text
+  "help text for cli"
+  "
+---------------------------------------
+Usage : Default project
+---------------------------------------
 
+```
+$ lein new descjop YOUR_APP_NAME
+```
+
+see your app dir. looks like
+
+```
+.
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+    +-- NAMESPACE
+        +-- core.cljs // ClojureScript in here
+```
+
+---------------------------------------
+Usage : Om based project
+---------------------------------------
+
+```
+$ lein new descjop YOUR_APP_NAME +om
+```
+
+see your app dir. looks like
+
+```
+.
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+|   +-- NAMESPACE
+|       +-- core.cljs // ClojureScript for Electron in here
++-- src_front
+    +--NAMESPACE_om
+       +-- core.cljs // Frontend clojureScript in here
+```
+
+---------------------------------------
+Build your Electron(Atom-Shell) app
+---------------------------------------
+
+# step 1
+---------------------------------------
+
+run npm command below.
+
+```
+$ npm install -g grunt-cli 
+$ npm install 
+$ grunt download-electron
+```
+
+and run extern commands,
+
+```
+$ lein externs > app/js/externs.js
+```
+
+run cljsbuild.
+
+```
+$ lein cljsbuild once
+```
+
+so you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\\electron\\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+")

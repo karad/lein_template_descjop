@@ -15,6 +15,14 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 * leiningen 2.x +
 * node v0.12.x +
 
+## Usage
+
+You can display help how to use descjop.
+
+```
+$ lein new descjop help
+```
+
 ## Usage : Default project
 
 ```
@@ -66,7 +74,7 @@ see your app dir. looks like
 +-- src_front
     +--NAMESPACE_om
        +-- core.cljs // Frontend clojureScript in here
-
+```
 
 ## Build your Electron(Atom-Shell) app
 
@@ -123,6 +131,13 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 ![Desktop Application pic](man/images/app.png)
 
 ## Change log
+
+### 0.3.2 (2015-09-19)
+
+Changes:
+
+- add help command
+- update electron -> 0.33.0
 
 ### 0.3.1 (2015-09-10)
 
