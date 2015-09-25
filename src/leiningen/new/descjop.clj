@@ -66,12 +66,48 @@
              ["src_front/{{sanitized}}_om/core.cljs" (render "om__src__core.cljs" data)]
              "resources")))
 
+(defn project-reagent
+  "default descjop template with reagent.
+
+  ## change from default
+  core.cljs -> reagent__src__core.cljs
+
+  ## change from default
+  index.html -> reagent__app__index.html
+  project.clj -> reagent__project.clj
+  "
+  [name]
+  (let [render (renderer "descjop")
+        main-ns (multi-segment (sanitize-ns name))
+        data {:raw-name name
+              :name (project-name name)
+              :sanitized (name-to-path name)
+              :namespace main-ns
+              :nested-dirs (name-to-path main-ns)
+              :year (year)}]
+    (main/info "Generating fresh descjop +reagent project.")
+    (->files data
+             ["app/index.html" (render "reagent__app__index.html" data)]
+             ["app/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/js/main.js" (render "app__js__main.js" data)]
+             ["app/package.json" (render "app__package.json" data)]
+             ["Gruntfile.js" (render "Gruntfile.js" data)]
+             [".gitignore" (render ".gitignore" data)]
+             ["package.json" (render "package.json" data)]
+             ["project.clj" (render "reagent__project.clj" data)]
+             ["README.md" (render "README.md" data)]
+             ["src/{{sanitized}}/core.cljs" (render "src__core.cljs" data)]
+             ["src_front/{{sanitized}}/core.cljs" (render "reagent__src__core.cljs" data)]
+             ["src_tools/figwheel_middleware.clj" (render "figwheel_middleware.clj" data)]
+             "resources")))
+
 (defn descjop
   "An Electron(atom-shell) application project template."
   [name & params]
   (cond
     (= name "help") (println help-text)
     (= (first params) "+om") (project-om name)
+    (= (first params) "+reagent") (project-reagent name)
     :else (project-default name)))
 
 (def help-text
@@ -135,6 +171,44 @@ see your app dir. looks like
 ```
 
 ---------------------------------------
+Usage : Reagent based project
+---------------------------------------
+
+```
+$ lein new descjop YOUR_APP_NAME +reagent
+```
+
+see your app dir. looks like
+
+```
+.
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+|   +-- NAMESPACE
+|       +-- core.cljs // ClojureScript for Electron in here
++-- src_front
+|    +--NAMESPACE
+|       +-- core.cljs // Frontend clojureScript in here
++-- src_tools
+     +-- figwheel_middleware.clj // figwheel helper
+```
+
+reagent project support `figwheel`.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+---------------------------------------
 Build your Electron(Atom-Shell) app
 ---------------------------------------
 
@@ -144,8 +218,8 @@ Build your Electron(Atom-Shell) app
 run npm command below.
 
 ```
-$ npm install -g grunt-cli 
-$ npm install 
+$ npm install -g grunt-cli
+$ npm install
 $ grunt download-electron
 ```
 
