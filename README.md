@@ -76,6 +76,45 @@ see your app dir. looks like
        +-- core.cljs // Frontend clojureScript in here
 ```
 
+---------------------------------------
+Usage : Reagent based project
+---------------------------------------
+
+```
+$ lein new descjop YOUR_APP_NAME +reagent
+```
+
+see your app dir. looks like
+
+```
+.
++-- README.md
++-- app
+|   +-- index.html // entry html file
+|   +-- js
+|   |   +-- cljsbuild-main.js // compiled JavaScript
+|   |   +-- externs.js
+|   |   +-- main.js
+|   +-- package.json // for Desktop app
++-- package.json // for Compile
++-- project.clj // compile settings desktop app
++-- src
+|   +-- NAMESPACE
+|       +-- core.cljs // ClojureScript for Electron in here
++-- src_front
+|    +--NAMESPACE
+|       +-- core.cljs // Frontend clojureScript in here
++-- src_tools
+     +-- figwheel_middleware.clj // figwheel helper
+```
+
+reagent project support `figwheel`.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+
 ## Build your Electron(Atom-Shell) app
 
 ### step 1
@@ -131,6 +170,13 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 ![Desktop Application pic](man/images/app.png)
 
 ## Change log
+
+### 0.4.0 (2015-09-29)
+
+Changes:
+
+- [reagent](https://github.com/reagent-project/reagent) support (with figwheel). good job [@mopemope](https://github.com/mopemope)!
+- update electron -> 0.33.3
 
 ### 0.3.2 (2015-09-19)
 
@@ -225,3 +271,8 @@ Copyright ©  Kazuhiro Hara (Greative LLC http://greative.jp/)
  :twitter https://twitter.com/kara_d}
 
 Distributed under the MIT License http://opensource.org/licenses/MIT .
+
+## Thanks
+
+- [@kara_d](https://github.com/karad/)
+- [@mopemope](https://github.com/mopemope)
