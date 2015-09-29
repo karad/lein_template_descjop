@@ -76,9 +76,7 @@ see your app dir. looks like
        +-- core.cljs // Frontend clojureScript in here
 ```
 
----------------------------------------
-Usage : Reagent based project
----------------------------------------
+## Usage : [reagent](https://github.com/reagent-project/reagent) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +reagent
