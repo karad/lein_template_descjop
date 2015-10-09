@@ -176,6 +176,13 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.5.0 (2015-10-09)
+
+Changes:
+
+- [om](https://github.com/omcljs/om) also support figwheel. great job [@dvcrn](https://github.com/dvcrn)!
+- update electron -> 0.33.6
+
 ### 0.4.0 (2015-09-29)
 
 Changes:
@@ -281,3 +288,4 @@ Distributed under the MIT License http://opensource.org/licenses/MIT .
 
 - [@kara_d](https://github.com/karad/)
 - [@mopemope](https://github.com/mopemope)
+- [@dvcrn](https://github.com/dvcrn)
