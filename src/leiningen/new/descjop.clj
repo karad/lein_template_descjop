@@ -64,6 +64,7 @@
              ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/core.cljs" (render "src__core.cljs" data)]
              ["src_front/{{sanitized}}_om/core.cljs" (render "om__src__core.cljs" data)]
+             ["src_tools/figwheel_middleware.clj" (render "figwheel_middleware.clj" data)]
              "resources")))
 
 (defn project-reagent
