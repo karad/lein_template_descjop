@@ -171,6 +171,13 @@ see your app dir. looks like
        +-- core.cljs // Frontend clojureScript in here
 ```
 
+om project support `figwheel`.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+
 ---------------------------------------
 Usage : Reagent based project
 ---------------------------------------
