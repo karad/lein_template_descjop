@@ -176,6 +176,13 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ## Change log
 
+### 0.5.1 (2015-10-22)
+
+Changes:
+
+- update electron -> 0.34.0
+- update clojurescript -> 1.7.145
+
 ### 0.5.0 (2015-10-09)
 
 Changes:
