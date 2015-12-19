@@ -130,10 +130,19 @@ run npm command below.
 $ npm install -g grunt-cli
 $ npm install
 $ grunt download-electron
-
+ 
 Running "download-electron" task
-
+ 
 Done, without errors.
+```
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName "Your Company Name"
+                                   :submitURL   "http://example.com/"}))
+  ...
 ```
 
 and run extern commands,
@@ -175,6 +184,17 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 ![Desktop Application pic](man/images/app.png)
 
 ## Change log
+
+### 0.5.3 (2015-12-19)
+
+Changes:
+
+- update electron -> `0.36.1`
+- change deprecated method `.loadUrl()` to `.loadURL()`
+- add `downloadDir` Gruntfile settings. if you want to download electron on current project directory. 
+- delete `atom-shell` in `app__index.html`
+- change `.gitignore` exclude `electron/*`
+- change `crash-reporter.start()` in `resources/leiningen/new/descjop/src__core.cljs` that require `companyName` and `submitURL`
 
 ### 0.5.2 (2015-11-19)
 

@@ -8,6 +8,6 @@
 
 (def app
   ;; static resources in resources/public
-  ; (wrap-resource "public")
+  ;; (wrap-resource "public")
   ;; static resources from webjars dependencies
   (wrap-resource handler "/META-INF/resources"))
