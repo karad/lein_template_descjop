@@ -37,9 +37,9 @@
                                          :optimizations :simple
 
                                          ;; advanced compile (prod)
-                                        ;:optimizations :advanced
+                                         ;;:optimizations :advanced
 
-                                        ;:source-map "app/js/test.js.map"
+                                         ;;:source-map "app/js/test.js.map"
                                          :pretty-print true
                                          :output-wrapper true
                                          }}

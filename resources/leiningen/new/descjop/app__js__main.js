@@ -9,4 +9,4 @@ require('./cljsbuild-main');
 // require('./out/goog/base');
 // require('./cljsbuild-main');
 // require('./out/{{name}}/core');
-// {{name}}.core._main("hello");
+// {{name}}.core._main();
