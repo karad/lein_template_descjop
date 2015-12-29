@@ -14,6 +14,13 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 
 * leiningen 2.x +
 * node v0.12.x +
+* grunt v0.1.13 +
+
+### (if you don't install grunt yet.)
+
+```
+$ npm install -g grunt-cli
+```
 
 ## Usage
 
@@ -47,6 +54,72 @@ see your app dir. looks like
     +-- NAMESPACE
         +-- core.cljs // ClojureScript in here
 ```
+
+### step 1
+
+run npm command below.
+
+```
+$ npm install
+$ grunt download-electron
+ 
+Running "download-electron" task
+ 
+Done, without errors.
+```
+
+### step 2
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName "Your Company Name"
+                                   :submitURL   "http://example.com/"}))
+  ...
+```
+
+### step 3
+
+and run extern commands,
+
+```
+$ lein externs > app/js/externs.js
+```
+
+run cljsbuild.
+
+```
+$ lein cljsbuild once
+
+Compiling ClojureScript.
+Compiling "app/js/cljsbuild-main.js" from ["src"]...
+Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
+```
+
+### step 4
+
+you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\electron\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+
 
 ## Usage : [Om](https://github.com/omcljs/om) based project
 
@@ -83,6 +156,81 @@ $ lein trampoline figwheel frontend
 ```
 
 
+### step 1
+
+run npm command below.
+
+```
+$ npm install
+$ grunt download-electron
+ 
+Running "download-electron" task
+ 
+Done, without errors.
+```
+
+### step 2
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName "Your Company Name"
+                                   :submitURL   "http://example.com/"}))
+  ...
+```
+
+### step 3
+
+and run extern commands,
+
+```
+$ lein externs > app/js/externs.js
+```
+
+run cljsbuild.
+
+```
+$ lein cljsbuild once
+
+Compiling ClojureScript.
+Compiling "app/js/cljsbuild-main.js" from ["src"]...
+Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
+```
+
+### step 4
+
+om project support `figwheel`.
+
+open other terminal window, and run.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+### step 5
+
+you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\electron\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+
 ## Usage : [reagent](https://github.com/reagent-project/reagent) based project
 
 ```
@@ -113,21 +261,11 @@ see your app dir. looks like
      +-- figwheel_middleware.clj // figwheel helper
 ```
 
-reagent project support `figwheel`.
-
-```
-$ lein trampoline figwheel frontend
-```
-
-
-## Build your Electron(Atom-Shell) app
-
 ### step 1
 
 run npm command below.
 
 ```
-$ npm install -g grunt-cli
 $ npm install
 $ grunt download-electron
  
@@ -135,6 +273,8 @@ Running "download-electron" task
  
 Done, without errors.
 ```
+
+### step 2
 
 you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
 
@@ -144,6 +284,8 @@ you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitUR
                                    :submitURL   "http://example.com/"}))
   ...
 ```
+
+### step 3
 
 and run extern commands,
 
@@ -161,7 +303,19 @@ Compiling "app/js/cljsbuild-main.js" from ["src"]...
 Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
 ```
 
-so you can run Electron(Atom-Shell) app.
+### step 4
+
+reagent project support `figwheel`.
+
+open other terminal window, and run.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+### step 5
+
+you can run Electron(Atom-Shell) app.
 
 On Windows:
 
@@ -183,7 +337,18 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 ![Desktop Application pic](man/images/app.png)
 
+
+
 ## Change log
+
+### 0.5.4 (2015-12-29)
+
+Changes:
+
+- update document
+- update electron -> `0.36.1`
+- update lein-cljsbuild -> `1.1.2`
+- update lein-externs -> `0.1.5`
 
 ### 0.5.3 (2015-12-19)
 
