@@ -113,10 +113,21 @@
 
 (def help-text
   "help text for cli"
-  "
----------------------------------------
-Usage : Default project
----------------------------------------
+  "### (if you don't install grunt yet.)
+
+```
+$ npm install -g grunt-cli
+```
+
+## Usage
+
+You can display help how to use descjop.
+
+```
+$ lein new descjop help
+```
+
+## Usage : Default project
 
 ```
 $ lein new descjop YOUR_APP_NAME
@@ -141,9 +152,73 @@ see your app dir. looks like
         +-- core.cljs // ClojureScript in here
 ```
 
----------------------------------------
-Usage : Om based project
----------------------------------------
+### step 1
+
+run npm command below.
+
+```
+$ npm install
+$ grunt download-electron
+ 
+Running \"download-electron\" task
+ 
+Done, without errors.
+```
+
+### step 2
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName \"Your Company Name\"
+                                   :submitURL   \"http://example.com/\"}))
+  ...
+```
+
+### step 3
+
+and run extern commands,
+
+```
+$ lein externs > app/js/externs.js
+```
+
+run cljsbuild.
+
+```
+$ lein cljsbuild once
+
+Compiling ClojureScript.
+Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
+Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
+```
+
+### step 4
+
+you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\\electron\\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+
+
+## Usage : [Om](https://github.com/omcljs/om) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +om
@@ -178,9 +253,82 @@ $ lein trampoline figwheel frontend
 ```
 
 
----------------------------------------
-Usage : Reagent based project
----------------------------------------
+### step 1
+
+run npm command below.
+
+```
+$ npm install
+$ grunt download-electron
+ 
+Running \"download-electron\" task
+ 
+Done, without errors.
+```
+
+### step 2
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName \"Your Company Name\"
+                                   :submitURL   \"http://example.com/\"}))
+  ...
+```
+
+### step 3
+
+and run extern commands,
+
+```
+$ lein externs > app/js/externs.js
+```
+
+run cljsbuild.
+
+```
+$ lein cljsbuild once
+
+Compiling ClojureScript.
+Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
+Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
+```
+
+### step 4
+
+om project support `figwheel`.
+
+open other terminal window, and run.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+### step 5
+
+you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\\electron\\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+
+## Usage : [reagent](https://github.com/reagent-project/reagent) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +reagent
@@ -210,26 +358,31 @@ see your app dir. looks like
      +-- figwheel_middleware.clj // figwheel helper
 ```
 
-reagent project support `figwheel`.
-
-```
-$ lein trampoline figwheel frontend
-```
-
----------------------------------------
-Build your Electron(Atom-Shell) app
----------------------------------------
-
-# step 1
----------------------------------------
+### step 1
 
 run npm command below.
 
 ```
-$ npm install -g grunt-cli
 $ npm install
 $ grunt download-electron
+ 
+Running \"download-electron\" task
+ 
+Done, without errors.
 ```
+
+### step 2
+
+you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+
+```
+(defn -main []
+  (.start crash-reporter (clj->js {:companyName \"Your Company Name\"
+                                   :submitURL   \"http://example.com/\"}))
+  ...
+```
+
+### step 3
 
 and run extern commands,
 
@@ -241,9 +394,25 @@ run cljsbuild.
 
 ```
 $ lein cljsbuild once
+
+Compiling ClojureScript.
+Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
+Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
 ```
 
-so you can run Electron(Atom-Shell) app.
+### step 4
+
+reagent project support `figwheel`.
+
+open other terminal window, and run.
+
+```
+$ lein trampoline figwheel frontend
+```
+
+### step 5
+
+you can run Electron(Atom-Shell) app.
 
 On Windows:
 
@@ -262,4 +431,5 @@ On OS X:
 ```
 $ ./electron/Electron.app/Contents/MacOS/Electron app
 ```
+
 ")
