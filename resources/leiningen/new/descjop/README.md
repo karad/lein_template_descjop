@@ -1,12 +1,12 @@
 # {{name}}
 
-This project build by descjop v0.6.0
+This project build by descjop v0.6.2
 
 FIXME: description
 
 ## Requirements
 
-* leiningen 2.x +
+* leiningen 2.6.x +
 * node v0.12.x +
 * grunt v0.1.13 +
 
@@ -177,19 +177,19 @@ and you can run Electron(Atom-Shell) app.
 On Windows:
 
 ```
-$ .\electron\electron.exe app
+$ .\electron\electron.exe app/dev
 ```
 
 On Linux:
 
 ```
-$ ./electron/electron app
+$ ./electron/electron app/dev
 ```
 
 On OS X:
 
 ```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
+$ ./electron/Electron.app/Contents/MacOS/Electron app/dev
 ```
 
 #### production mode
@@ -199,19 +199,19 @@ you can run Electron(Atom-Shell) app.
 On Windows:
 
 ```
-$ .\electron\electron.exe app
+$ .\electron\electron.exe app/prod
 ```
 
 On Linux:
 
 ```
-$ ./electron/electron app
+$ ./electron/electron app/prod
 ```
 
 On OS X:
 
 ```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
+$ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 ```
 
 ## Aliases
