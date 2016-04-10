@@ -69,7 +69,7 @@
                                              ;;:source-map "app/dev/js/test.js.map"
                                              :pretty-print true
                                              :output-wrapper true}}
-                       :dev-front {:source-paths ["src_front" "src_front_profile/{{name}}_front/dev"]
+                       :dev-front {:source-paths ["src_front" "src_front_profile/{{sanitized}}_front/dev"]
                                    :incremental true
                                    :jar true
                                    :assert true
@@ -119,7 +119,7 @@
                                               ;;:source-map "app/prod/js/test.js.map"
                                               :pretty-print true
                                               :output-wrapper true}}
-                       :prod-front {:source-paths ["src_front" "src_front_profile/{{name}}_front/prod"]
+                       :prod-front {:source-paths ["src_front" "src_front_profile/{{sanitized}}_front/prod"]
                                     :incremental true
                                     :jar true
                                     :assert true

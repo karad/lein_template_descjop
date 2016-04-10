@@ -237,12 +237,17 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ![Desktop Application pic](man/images/app.png)
 
-## Milestone
+## Milestones
 
 - descjop cli command
 - add CSS
+- test suite
 
 ## Change log
+
+### 0.6.3 (2016-04-11)
+
+- fixed namespace problem.
 
 ### 0.6.2 (2016-04-10)
 
