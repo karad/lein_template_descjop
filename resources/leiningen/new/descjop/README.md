@@ -28,7 +28,7 @@ $ lein new descjop help
 and you can use alias in project directory.
 
 ```
-$ lein dsjp-help
+$ lein descjop-help
 ```
 
 ## New project from leiningen template
@@ -100,10 +100,23 @@ see your app dir. looks like
 
 ### step 1
 
-run `dsjp-init` alias below.
+run `descjop-init` (windows user should use `descjop-init-win`) alias below.
+
+#### OSX/Linux user
 
 ```
-$ lein dsjp-init
+$ lein descjop-init
+ ...
+ 
+Running "download-electron" task
+ 
+Done, without errors.
+```
+
+#### Windows user
+
+```
+$ lein descjop-init-win
  ...
  
 Running "download-electron" task
@@ -124,16 +137,16 @@ you have to change `src/PROJECT_NAME/core.cljs` about `:companyName` and `submit
 
 ### step 3
 
-and run extern alias `dsjp-externs`,
+and run extern alias `descjop-externs`,
 
 ```
-$ lein dsjp-externs
+$ lein descjop-externs
 ```
 
-run cljsbuild `lein dsjp-once`.
+run cljsbuild `lein descjop-once`.
 
 ```
-$ lein dsjp-once
+$ lein descjop-once
 
 Compiling ClojureScript.
 Compiling "app/js/cljsbuild-main.js" from ["src"]...
@@ -152,11 +165,11 @@ You can run Desctop application.
 
 #### development mode
 
-development mode use figwheel. run alias `dsjp-figwheel`.  before run application.
+development mode use figwheel. run alias `descjop-figwheel`.  before run application.
 Open other terminal window.
 
 ```
-$ lein dsjp-figwheel
+$ lein descjop-figwheel
 ```
 
 and you can run Electron(Atom-Shell) app.
@@ -206,15 +219,16 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 you can use aliases in project directory.
 
 ```
-$ lein dsjp-help          # descjop help
-$ lein dsjp-init          # init project
-$ lein dsjp-externs       # output externs for develop and production
-$ lein dsjp-externs-dev   # output externs for develop
-$ lein dsjp-externs-prod  # output externs for production
-$ lein dsjp-figwheel      # start figwheel
-$ lein dsjp-once          # build JavaScript for develop and production
-$ lein dsjp-once-dev      # build JavaScript for develop
-$ lein dsjp-once-prod     # build JavaScript for production
+$ lein descjop-help          # descjop help
+$ lein descjop-init          # init project
+$ lein descjop-init-win      # init project for windows user
+$ lein descjop-externs       # output externs for develop and production
+$ lein descjop-externs-dev   # output externs for develop
+$ lein descjop-externs-prod  # output externs for production
+$ lein descjop-figwheel      # start figwheel
+$ lein descjop-once          # build JavaScript for develop and production
+$ lein descjop-once-dev      # build JavaScript for develop
+$ lein descjop-once-prod     # build JavaScript for production
 ```
 
 ## License

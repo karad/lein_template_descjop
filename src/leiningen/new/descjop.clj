@@ -255,10 +255,23 @@ see your app dir. looks like
 
 ### step 1
 
-run `descjop-init` alias below.
+run `descjop-init` (windows user should use `descjop-init-win`) alias below.
+
+#### OSX/Linux user
 
 ```
 $ lein descjop-init
+ ...
+ 
+Running \"download-electron\" task
+ 
+Done, without errors.
+```
+
+#### Windows user
+
+```
+$ lein descjop-init-win
  ...
  
 Running \"download-electron\" task

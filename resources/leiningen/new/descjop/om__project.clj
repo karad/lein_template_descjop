@@ -19,6 +19,9 @@
             "descjop-init" ["do"
                             ["shell" "npm" "install"]
                             ["shell" "grunt" "download-electron"]]
+            "descjop-init-win" ["do"
+                            ["shell" "cmd.exe" "/c" "npm" "install"]
+                            ["shell" "cmd.exe" "/c" "grunt" "download-electron"]]
             "descjop-externs" ["do"
                                ["externs" "dev-main" "app/dev/js/externs.js"]
                                ["externs" "dev-front" "app/dev/js/externs_front.js"]
