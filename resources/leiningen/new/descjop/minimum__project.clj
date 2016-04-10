@@ -6,14 +6,13 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.228" :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [figwheel "0.4.0"]
-                 [reagent "0.5.1"]
-                 [ring/ring-core "1.4.0"]]
+                 [figwheel "0.4.0"]]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-externs "0.1.6"]
             [lein-shell "0.4.1"]
             [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]]
   :source-paths ["src_tools"]
+  :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
             "descjop-init" ["do"
                             ["shell" "npm" "install"]
@@ -41,7 +40,6 @@
             "descjop-once-prod" ["do"
                                  ["cljsbuild" "once" "prod-main"]
                                  ["cljsbuild" "once" "prod-front"]]}
-  :hooks [leiningen.cljsbuild]
   :cljsbuild {:builds {:dev-main {:source-paths ["src"]
                                   :incremental true
                                   :jar true
