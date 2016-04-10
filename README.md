@@ -224,15 +224,27 @@ $ lein dsjp-once-prod     # build JavaScript for production
 
 ![Desktop Application pic](man/images/app.png)
 
+## Milestone
 
+- descjop cli command
+- add CSS
 
 ## Change log
 
-### 0.6.0
+### 0.6.0 (2016-04-10)
 
 Changes:
 
-- update clojurescript 1.7.122 -> 1.8.40
+- update clojurescript 1.7.122 -> 1.7.228
+- update electron -> `0.37.5`
+- add descjop command help alias `lein descjop-help`
+- add descjop command init alias `lein descjop-init`
+- add descjop command externs alias `lein descjop-externs` `lein descjop-externs-dev` `lein descjop-externs-prod`
+- add descjop command compile alias `lein descjop-once` `lein descjop-once-dev` `lein descjop-once-prod`
+- add descjop command figwheel alias `lein descjop-figwheel`
+- support development and production mode.
+- re-design directories.
+- some bug fix
 
 ### 0.5.4 (2015-12-29)
 
