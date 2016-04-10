@@ -33,7 +33,7 @@ $ lein new descjop help
 and you can use alias in project directory.
 
 ```
-$ lein descjop-help
+$ lein dsjp-help
 ```
 
 ## New project from leiningen template
@@ -105,10 +105,10 @@ see your app dir. looks like
 
 ### step 1
 
-run `descjop-init` alias below.
+run `dsjp-init` alias below.
 
 ```
-$ lein descjop-init
+$ lein dsjp-init
  ...
  
 Running "download-electron" task
@@ -129,16 +129,16 @@ you have to change `src/PROJECT_NAME/core.cljs` about `:companyName` and `submit
 
 ### step 3
 
-and run extern alias `descjop-externs`,
+and run extern alias `dsjp-externs`,
 
 ```
-$ lein descjop-externs
+$ lein dsjp-externs
 ```
 
-run cljsbuild `lein descjop-once`.
+run cljsbuild `lein dsjp-once`.
 
 ```
-$ lein descjop-once
+$ lein dsjp-once
 
 Compiling ClojureScript.
 Compiling "app/js/cljsbuild-main.js" from ["src"]...
@@ -157,11 +157,11 @@ You can run Desctop application.
 
 #### development mode
 
-development mode use figwheel. run alias `descjop-figwheel`.  before run application.
+development mode use figwheel. run alias `dsjp-figwheel`.  before run application.
 Open other terminal window.
 
 ```
-$ lein descjop-figwheel
+$ lein dsjp-figwheel
 ```
 
 and you can run Electron(Atom-Shell) app.
@@ -211,15 +211,15 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 you can use aliases in project directory.
 
 ```
-$ lein descjop-help          # descjop help
-$ lein descjop-init          # init project
-$ lein descjop-externs       # output externs for develop and production
-$ lein descjop-externs-dev   # output externs for develop
-$ lein descjop-externs-prod  # output externs for production
-$ lein descjop-figwheel      # start figwheel
-$ lein descjop-once          # build JavaScript for develop and production
-$ lein descjop-once-dev      # build JavaScript for develop
-$ lein descjop-once-prod     # build JavaScript for production
+$ lein dsjp-help          # descjop help
+$ lein dsjp-init          # init project
+$ lein dsjp-externs       # output externs for develop and production
+$ lein dsjp-externs-dev   # output externs for develop
+$ lein dsjp-externs-prod  # output externs for production
+$ lein dsjp-figwheel      # start figwheel
+$ lein dsjp-once          # build JavaScript for develop and production
+$ lein dsjp-once-dev      # build JavaScript for develop
+$ lein dsjp-once-prod     # build JavaScript for production
 ```
 
 ![Desktop Application pic](man/images/app.png)

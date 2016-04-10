@@ -19,8 +19,9 @@
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
     (main/info "
-Generating fresh descjop +om project.
-you can use old version `$ lein new descjop myapp +om --template-version 0.5.4`.
+Generating fresh descjop minimum project.
+this template is new version.
+you can use old version `$ lein new descjop myapp --template-version 0.5.4`.
 ")
     (->files data
              ;; for dev
@@ -71,7 +72,8 @@ you can use old version `$ lein new descjop myapp +om --template-version 0.5.4`.
               :year (year)}]
     (main/info "
 Generating fresh descjop +om project.
-you can use old version `$ lein new descjop myapp --template-version 0.5.4`.
+this template is new version.
+you can use old version `$ lein new descjop myapp +om --template-version 0.5.4`.
 ")
     (->files data
              ;; for dev
@@ -121,7 +123,8 @@ you can use old version `$ lein new descjop myapp --template-version 0.5.4`.
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
     (main/info "
-Generating fresh descjop +om project.
+Generating fresh descjop +reagent project.
+this template is new version.
 you can use old version `$ lein new descjop myapp +reagent --template-version 0.5.4`.
 ")
     (->files data
@@ -177,7 +180,7 @@ You can display help how to use descjop.
 $ lein new descjop help
 ```
 
-and you can use alias in project directory.
+and you can use alias `descjop-help` in project directory.
 
 ```
 $ lein descjop-help
@@ -316,19 +319,19 @@ and you can run Electron(Atom-Shell) app.
 On Windows:
 
 ```
-$ .\electron\electron.exe app
+$ .\\electron\\electron.exe app/dev
 ```
 
 On Linux:
 
 ```
-$ ./electron/electron app
+$ ./electron/electron app/dev
 ```
 
 On OS X:
 
 ```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
+$ ./electron/Electron.app/Contents/MacOS/Electron app/dev
 ```
 
 #### production mode
@@ -338,19 +341,19 @@ you can run Electron(Atom-Shell) app.
 On Windows:
 
 ```
-$ .\electron\electron.exe app
+$ .\\electron\\electron.exe app/prod
 ```
 
 On Linux:
 
 ```
-$ ./electron/electron app
+$ ./electron/electron app/prod
 ```
 
 On OS X:
 
 ```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
+$ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 ```
 
 ## Aliases
