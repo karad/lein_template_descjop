@@ -6,8 +6,6 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.8.40" :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [sablono "0.3.6"]
-                 [org.omcljs/om "0.9.0"]
                  [figwheel "0.4.0"]]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-externs "0.1.6"]

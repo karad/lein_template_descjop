@@ -18,19 +18,37 @@
               :namespace main-ns
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
-    (main/info "Generating fresh descjop project.")
+    (main/info "
+Generating fresh descjop +om project.
+you can use old version `$ lein new descjop myapp +om --template-version 0.5.4`.
+")
     (->files data
-             ["app/index.html" (render "app__index.html" data)]
-             ["app/js/externs.js" (render "app__js__externs.js" data)]
-             ["app/js/main.js" (render "app__js__main.js" data)]
-             ["app/package.json" (render "app__package.json" data)]
+             ;; for dev
+             ["app/dev/index.html" (render "minimum__app__dev__index.html" data)]
+             ["app/dev/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/dev/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/dev/js/main.js" (render "app__js__main.js" data)]
+             ["app/dev/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/conf.cljs" (render "minimum__src__front__profile__dev__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/init.cljs" (render "minimum__src__front__profile__dev__init.cljs" data)]
+             ;; for prod
+             ["app/prod/index.html" (render "minimum__app__prod__index.html" data)]
+             ["app/prod/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/prod/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/prod/js/main.js" (render "app__js__main.js" data)]
+             ["app/prod/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/conf.cljs" (render "minimum__src__front__profile__prod__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/init.cljs" (render "minimum__src__front__profile__prod__init.cljs" data)]
+             ;; other files
+             ["src_front/{{sanitized}}_front/core.cljs" (render "minimum__src__front__core.cljs" data)]
              ["Gruntfile.js" (render "Gruntfile.js" data)]
              [".gitignore" (render ".gitignore" data)]
              ["package.json" (render "package.json" data)]
-             ["project.clj" (render "project.clj" data)]
+             ["project.clj" (render "minimum__project.clj" data)]
              ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/core.cljs" (render "src__core.cljs" data)]
-             "resources")))
+             ["src_tools/figwheel_middleware.clj" (render "figwheel_middleware.clj" data)]
+             ["resources/empty" (render "empty" data)])))
 
 (defn project-om
   "default descjop template with om.
@@ -51,21 +69,37 @@
               :namespace main-ns
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
-    (main/info "Generating fresh descjop +om project.")
+    (main/info "
+Generating fresh descjop +om project.
+you can use old version `$ lein new descjop myapp --template-version 0.5.4`.
+")
     (->files data
-             ["app/index.html" (render "om__app__index.html" data)]
-             ["app/js/externs.js" (render "app__js__externs.js" data)]
-             ["app/js/main.js" (render "app__js__main.js" data)]
-             ["app/package.json" (render "app__package.json" data)]
+             ;; for dev
+             ["app/dev/index.html" (render "om__app__dev__index.html" data)]
+             ["app/dev/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/dev/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/dev/js/main.js" (render "app__js__main.js" data)]
+             ["app/dev/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/conf.cljs" (render "om__src__front__profile__dev__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/init.cljs" (render "om__src__front__profile__dev__init.cljs" data)]
+             ;; for prod
+             ["app/prod/index.html" (render "om__app__prod__index.html" data)]
+             ["app/prod/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/prod/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/prod/js/main.js" (render "app__js__main.js" data)]
+             ["app/prod/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/conf.cljs" (render "om__src__front__profile__prod__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/init.cljs" (render "om__src__front__profile__prod__init.cljs" data)]
+             ;; other files
+             ["src_front/{{sanitized}}_front/core.cljs" (render "om__src__front__core.cljs" data)]
              ["Gruntfile.js" (render "Gruntfile.js" data)]
              [".gitignore" (render ".gitignore" data)]
              ["package.json" (render "package.json" data)]
              ["project.clj" (render "om__project.clj" data)]
              ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/core.cljs" (render "src__core.cljs" data)]
-             ["src_front/{{sanitized}}_om/core.cljs" (render "om__src__core.cljs" data)]
              ["src_tools/figwheel_middleware.clj" (render "figwheel_middleware.clj" data)]
-             "resources")))
+             ["resources/empty" (render "empty" data)])))
 
 (defn project-reagent
   "default descjop template with reagent.
@@ -86,21 +120,37 @@
               :namespace main-ns
               :nested-dirs (name-to-path main-ns)
               :year (year)}]
-    (main/info "Generating fresh descjop +reagent project.")
+    (main/info "
+Generating fresh descjop +om project.
+you can use old version `$ lein new descjop myapp +reagent --template-version 0.5.4`.
+")
     (->files data
-             ["app/index.html" (render "reagent__app__index.html" data)]
-             ["app/js/externs.js" (render "app__js__externs.js" data)]
-             ["app/js/main.js" (render "app__js__main.js" data)]
-             ["app/package.json" (render "app__package.json" data)]
+             ;; for dev
+             ["app/dev/index.html" (render "reagent__app__dev__index.html" data)]
+             ["app/dev/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/dev/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/dev/js/main.js" (render "app__js__main.js" data)]
+             ["app/dev/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/conf.cljs" (render "reagent__src__front__profile__dev__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/dev/init.cljs" (render "reagent__src__front__profile__dev__init.cljs" data)]
+             ;; for prod
+             ["app/prod/index.html" (render "reagent__app__prod__index.html" data)]
+             ["app/prod/js/externs.js" (render "app__js__externs.js" data)]
+             ["app/prod/js/externs_front.js" (render "app__js__externs__front.js" data)]
+             ["app/prod/js/main.js" (render "app__js__main.js" data)]
+             ["app/prod/package.json" (render "app__package.json" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/conf.cljs" (render "reagent__src__front__profile__prod__conf.cljs" data)]
+             ["src_front_profile/{{sanitized}}_front/prod/init.cljs" (render "reagent__src__front__profile__prod__init.cljs" data)]
+             ;; other files
+             ["src_front/{{sanitized}}_front/core.cljs" (render "reagent__src__front__core.cljs" data)]
              ["Gruntfile.js" (render "Gruntfile.js" data)]
              [".gitignore" (render ".gitignore" data)]
              ["package.json" (render "package.json" data)]
              ["project.clj" (render "reagent__project.clj" data)]
              ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/core.cljs" (render "src__core.cljs" data)]
-             ["src_front/{{sanitized}}/core.cljs" (render "reagent__src__core.cljs" data)]
              ["src_tools/figwheel_middleware.clj" (render "figwheel_middleware.clj" data)]
-             "resources")))
+             ["resources/empty" (render "empty" data)])))
 
 (defn descjop
   "An Electron(atom-shell) application project template."
@@ -119,7 +169,7 @@
 $ npm install -g grunt-cli
 ```
 
-## Usage
+## Help
 
 You can display help how to use descjop.
 
@@ -127,244 +177,86 @@ You can display help how to use descjop.
 $ lein new descjop help
 ```
 
-## Usage : Default project
+and you can use alias in project directory.
+
+```
+$ lein descjop-help
+```
+
+## New project from leiningen template
+
+### Minimum project
 
 ```
 $ lein new descjop YOUR_APP_NAME
+$ cd YOUR_APP_NAME
 ```
 
-see your app dir. looks like
-
-```
-.
-+-- README.md
-+-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
-+-- package.json // for Compile
-+-- project.clj // compile settings desktop app
-+-- src
-    +-- NAMESPACE
-        +-- core.cljs // ClojureScript in here
-```
-
-### step 1
-
-run npm command below.
-
-```
-$ npm install
-$ grunt download-electron
- 
-Running \"download-electron\" task
- 
-Done, without errors.
-```
-
-### step 2
-
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
-
-```
-(defn -main []
-  (.start crash-reporter (clj->js {:companyName \"Your Company Name\"
-                                   :submitURL   \"http://example.com/\"}))
-  ...
-```
-
-### step 3
-
-and run extern commands,
-
-```
-$ lein externs > app/js/externs.js
-```
-
-run cljsbuild.
-
-```
-$ lein cljsbuild once
-
-Compiling ClojureScript.
-Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
-Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
-```
-
-### step 4
-
-you can run Electron(Atom-Shell) app.
-
-On Windows:
-
-```
-$ .\\electron\\electron.exe app
-```
-
-On Linux:
-
-```
-$ ./electron/electron app
-```
-
-On OS X:
-
-```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
-```
-
-
-
-## Usage : [Om](https://github.com/omcljs/om) based project
+### [Om](https://github.com/omcljs/om) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +om
+$ cd YOUR_APP_NAME
 ```
 
-see your app dir. looks like
-
-```
-.
-+-- README.md
-+-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
-+-- package.json // for Compile
-+-- project.clj // compile settings desktop app
-+-- src
-|   +-- NAMESPACE
-|       +-- core.cljs // ClojureScript for Electron in here
-+-- src_front
-    +--NAMESPACE_om
-       +-- core.cljs // Frontend clojureScript in here
-```
-
-om project support `figwheel`.
-
-```
-$ lein trampoline figwheel frontend
-```
-
-
-### step 1
-
-run npm command below.
-
-```
-$ npm install
-$ grunt download-electron
- 
-Running \"download-electron\" task
- 
-Done, without errors.
-```
-
-### step 2
-
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
-
-```
-(defn -main []
-  (.start crash-reporter (clj->js {:companyName \"Your Company Name\"
-                                   :submitURL   \"http://example.com/\"}))
-  ...
-```
-
-### step 3
-
-and run extern commands,
-
-```
-$ lein externs > app/js/externs.js
-```
-
-run cljsbuild.
-
-```
-$ lein cljsbuild once
-
-Compiling ClojureScript.
-Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
-Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
-```
-
-### step 4
-
-om project support `figwheel`.
-
-open other terminal window, and run.
-
-```
-$ lein trampoline figwheel frontend
-```
-
-### step 5
-
-you can run Electron(Atom-Shell) app.
-
-On Windows:
-
-```
-$ .\\electron\\electron.exe app
-```
-
-On Linux:
-
-```
-$ ./electron/electron app
-```
-
-On OS X:
-
-```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
-```
-
-
-## Usage : [reagent](https://github.com/reagent-project/reagent) based project
+### [reagent](https://github.com/reagent-project/reagent) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +reagent
+$ cd YOUR_APP_NAME
 ```
+
+## Project Directory
 
 see your app dir. looks like
 
 ```
 .
++-- Gruntfile.js
 +-- README.md
 +-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
+|   +-- dev // deveropment mode dir
+|   |   +-- index.html // entry html file
+|   |   +-- js
+|   |   |   +-- externs_front.js
+|   |   |   +-- externs.js
+|   |   |   +-- main.js
+|   |   +-- package.json // for Desktop app
+|   +-- prod // production mode dir
+|       +-- index.html // entry html file
+|       +-- js
+|       |   +-- externs_front.js
+|       |   +-- externs.js
+|       |   +-- main.js
+|       +-- package.json // for Desktop app
 +-- package.json // for Compile
 +-- project.clj // compile settings desktop app
++-- resources
 +-- src
 |   +-- NAMESPACE
 |       +-- core.cljs // ClojureScript for Electron in here
 +-- src_front
-|    +--NAMESPACE
-|       +-- core.cljs // Frontend clojureScript in here
-+-- src_tools
-     +-- figwheel_middleware.clj // figwheel helper
+|   +--NAMESPACE_front
+|      +-- core.cljs // Frontend clojureScript in here
++-- src_front_profile
+    +--NAMESPACE_front
+       +-- dev
+       |   +-- conf.cljs
+       |   +-- init.cljs
+       +-- prod
+           +-- conf.cljs
+           +-- init.cljs
 ```
+
+## Usage
 
 ### step 1
 
-run npm command below.
+run `descjop-init` alias below.
 
 ```
-$ npm install
-$ grunt download-electron
+$ lein descjop-init
+ ...
  
 Running \"download-electron\" task
  
@@ -373,7 +265,7 @@ Done, without errors.
 
 ### step 2
 
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+you have to change `src/PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
 
 ```
 (defn -main []
@@ -384,40 +276,47 @@ you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitUR
 
 ### step 3
 
-and run extern commands,
+and run extern alias `descjop-externs`,
 
 ```
-$ lein externs > app/js/externs.js
+$ lein descjop-externs
 ```
 
-run cljsbuild.
+run cljsbuild `lein descjop-once`.
 
 ```
-$ lein cljsbuild once
+$ lein descjop-once
 
 Compiling ClojureScript.
 Compiling \"app/js/cljsbuild-main.js\" from [\"src\"]...
 Successfully compiled \"app/js/cljsbuild-main.js\" in 10.812 seconds.
+...
+Successfully compiled \"app/dev/js/front.js\" in 10.588 seconds.
+...
+Successfully compiled \"app/prod/js/cljsbuild-main.js\" in 19.333 seconds.
+...
+Successfully compiled \"app/prod/js/front.js\" in 29.94 seconds.
 ```
 
 ### step 4
 
-reagent project support `figwheel`.
+You can run Desctop application.
 
-open other terminal window, and run.
+#### development mode
+
+development mode use figwheel. run alias `descjop-figwheel`.  before run application.
+Open other terminal window.
 
 ```
-$ lein trampoline figwheel frontend
+$ lein descjop-figwheel
 ```
 
-### step 5
-
-you can run Electron(Atom-Shell) app.
+and you can run Electron(Atom-Shell) app.
 
 On Windows:
 
 ```
-$ .\\electron\\electron.exe app
+$ .\electron\electron.exe app
 ```
 
 On Linux:
@@ -431,5 +330,44 @@ On OS X:
 ```
 $ ./electron/Electron.app/Contents/MacOS/Electron app
 ```
+
+#### production mode
+
+you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\electron\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+## Aliases
+
+you can use aliases in project directory.
+
+```
+$ lein descjop-help          # descjop help
+$ lein descjop-init          # init project
+$ lein descjop-externs       # output externs for develop and production
+$ lein descjop-externs-dev   # output externs for develop
+$ lein descjop-externs-prod  # output externs for production
+$ lein descjop-figwheel      # start figwheel
+$ lein descjop-once          # build JavaScript for develop and production
+$ lein descjop-once-dev      # build JavaScript for develop
+$ lein descjop-once-prod     # build JavaScript for production
+```
+
 
 ")

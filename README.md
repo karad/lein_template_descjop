@@ -22,7 +22,7 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 $ npm install -g grunt-cli
 ```
 
-## Usage
+## Help
 
 You can display help how to use descjop.
 
@@ -30,244 +30,86 @@ You can display help how to use descjop.
 $ lein new descjop help
 ```
 
-## Usage : Default project
+and you can use alias in project directory.
+
+```
+$ lein descjop-help
+```
+
+## New project from leiningen template
+
+### Minimum project
 
 ```
 $ lein new descjop YOUR_APP_NAME
+$ cd YOUR_APP_NAME
 ```
 
-see your app dir. looks like
-
-```
-.
-+-- README.md
-+-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
-+-- package.json // for Compile
-+-- project.clj // compile settings desktop app
-+-- src
-    +-- NAMESPACE
-        +-- core.cljs // ClojureScript in here
-```
-
-### step 1
-
-run npm command below.
-
-```
-$ npm install
-$ grunt download-electron
- 
-Running "download-electron" task
- 
-Done, without errors.
-```
-
-### step 2
-
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
-
-```
-(defn -main []
-  (.start crash-reporter (clj->js {:companyName "Your Company Name"
-                                   :submitURL   "http://example.com/"}))
-  ...
-```
-
-### step 3
-
-and run extern commands,
-
-```
-$ lein externs > app/js/externs.js
-```
-
-run cljsbuild.
-
-```
-$ lein cljsbuild once
-
-Compiling ClojureScript.
-Compiling "app/js/cljsbuild-main.js" from ["src"]...
-Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
-```
-
-### step 4
-
-you can run Electron(Atom-Shell) app.
-
-On Windows:
-
-```
-$ .\electron\electron.exe app
-```
-
-On Linux:
-
-```
-$ ./electron/electron app
-```
-
-On OS X:
-
-```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
-```
-
-
-
-## Usage : [Om](https://github.com/omcljs/om) based project
+### [Om](https://github.com/omcljs/om) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +om
+$ cd YOUR_APP_NAME
 ```
 
-see your app dir. looks like
-
-```
-.
-+-- README.md
-+-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
-+-- package.json // for Compile
-+-- project.clj // compile settings desktop app
-+-- src
-|   +-- NAMESPACE
-|       +-- core.cljs // ClojureScript for Electron in here
-+-- src_front
-    +--NAMESPACE_om
-       +-- core.cljs // Frontend clojureScript in here
-```
-
-om project support `figwheel`.
-
-```
-$ lein trampoline figwheel frontend
-```
-
-
-### step 1
-
-run npm command below.
-
-```
-$ npm install
-$ grunt download-electron
- 
-Running "download-electron" task
- 
-Done, without errors.
-```
-
-### step 2
-
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
-
-```
-(defn -main []
-  (.start crash-reporter (clj->js {:companyName "Your Company Name"
-                                   :submitURL   "http://example.com/"}))
-  ...
-```
-
-### step 3
-
-and run extern commands,
-
-```
-$ lein externs > app/js/externs.js
-```
-
-run cljsbuild.
-
-```
-$ lein cljsbuild once
-
-Compiling ClojureScript.
-Compiling "app/js/cljsbuild-main.js" from ["src"]...
-Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
-```
-
-### step 4
-
-om project support `figwheel`.
-
-open other terminal window, and run.
-
-```
-$ lein trampoline figwheel frontend
-```
-
-### step 5
-
-you can run Electron(Atom-Shell) app.
-
-On Windows:
-
-```
-$ .\electron\electron.exe app
-```
-
-On Linux:
-
-```
-$ ./electron/electron app
-```
-
-On OS X:
-
-```
-$ ./electron/Electron.app/Contents/MacOS/Electron app
-```
-
-
-## Usage : [reagent](https://github.com/reagent-project/reagent) based project
+### [reagent](https://github.com/reagent-project/reagent) based project
 
 ```
 $ lein new descjop YOUR_APP_NAME +reagent
+$ cd YOUR_APP_NAME
 ```
+
+## Project Directory
 
 see your app dir. looks like
 
 ```
 .
++-- Gruntfile.js
 +-- README.md
 +-- app
-|   +-- index.html // entry html file
-|   +-- js
-|   |   +-- cljsbuild-main.js // compiled JavaScript
-|   |   +-- externs.js
-|   |   +-- main.js
-|   +-- package.json // for Desktop app
+|   +-- dev // deveropment mode dir
+|   |   +-- index.html // entry html file
+|   |   +-- js
+|   |   |   +-- externs_front.js
+|   |   |   +-- externs.js
+|   |   |   +-- main.js
+|   |   +-- package.json // for Desktop app
+|   +-- prod // production mode dir
+|       +-- index.html // entry html file
+|       +-- js
+|       |   +-- externs_front.js
+|       |   +-- externs.js
+|       |   +-- main.js
+|       +-- package.json // for Desktop app
 +-- package.json // for Compile
 +-- project.clj // compile settings desktop app
++-- resources
 +-- src
 |   +-- NAMESPACE
 |       +-- core.cljs // ClojureScript for Electron in here
 +-- src_front
-|    +--NAMESPACE
-|       +-- core.cljs // Frontend clojureScript in here
-+-- src_tools
-     +-- figwheel_middleware.clj // figwheel helper
+|   +--NAMESPACE_front
+|      +-- core.cljs // Frontend clojureScript in here
++-- src_front_profile
+    +--NAMESPACE_front
+       +-- dev
+       |   +-- conf.cljs
+       |   +-- init.cljs
+       +-- prod
+           +-- conf.cljs
+           +-- init.cljs
 ```
+
+## Usage
 
 ### step 1
 
-run npm command below.
+run `descjop-init` alias below.
 
 ```
-$ npm install
-$ grunt download-electron
+$ lein descjop-init
+ ...
  
 Running "download-electron" task
  
@@ -276,7 +118,7 @@ Done, without errors.
 
 ### step 2
 
-you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
+you have to change `src/PROJECT_NAME/core.cljs` about `:companyName` and `submitURL`.
 
 ```
 (defn -main []
@@ -287,33 +129,62 @@ you have to change `./PROJECT_NAME/core.cljs` about `:companyName` and `submitUR
 
 ### step 3
 
-and run extern commands,
+and run extern alias `descjop-externs`,
 
 ```
-$ lein externs > app/js/externs.js
+$ lein descjop-externs
 ```
 
-run cljsbuild.
+run cljsbuild `lein descjop-once`.
 
 ```
-$ lein cljsbuild once
+$ lein descjop-once
 
 Compiling ClojureScript.
 Compiling "app/js/cljsbuild-main.js" from ["src"]...
 Successfully compiled "app/js/cljsbuild-main.js" in 10.812 seconds.
+...
+Successfully compiled "app/dev/js/front.js" in 10.588 seconds.
+...
+Successfully compiled "app/prod/js/cljsbuild-main.js" in 19.333 seconds.
+...
+Successfully compiled "app/prod/js/front.js" in 29.94 seconds.
 ```
 
 ### step 4
 
-reagent project support `figwheel`.
+You can run Desctop application.
 
-open other terminal window, and run.
+#### development mode
+
+development mode use figwheel. run alias `descjop-figwheel`.  before run application.
+Open other terminal window.
 
 ```
-$ lein trampoline figwheel frontend
+$ lein descjop-figwheel
 ```
 
-### step 5
+and you can run Electron(Atom-Shell) app.
+
+On Windows:
+
+```
+$ .\electron\electron.exe app
+```
+
+On Linux:
+
+```
+$ ./electron/electron app
+```
+
+On OS X:
+
+```
+$ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+#### production mode
 
 you can run Electron(Atom-Shell) app.
 
@@ -333,6 +204,22 @@ On OS X:
 
 ```
 $ ./electron/Electron.app/Contents/MacOS/Electron app
+```
+
+## Aliases
+
+you can use aliases in project directory.
+
+```
+$ lein descjop-help          # descjop help
+$ lein descjop-init          # init project
+$ lein descjop-externs       # output externs for develop and production
+$ lein descjop-externs-dev   # output externs for develop
+$ lein descjop-externs-prod  # output externs for production
+$ lein descjop-figwheel      # start figwheel
+$ lein descjop-once          # build JavaScript for develop and production
+$ lein descjop-once-dev      # build JavaScript for develop
+$ lein descjop-once-prod     # build JavaScript for production
 ```
 
 ![Desktop Application pic](man/images/app.png)
@@ -340,6 +227,12 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app
 
 
 ## Change log
+
+### 0.6.0
+
+Changes:
+
+- update clojurescript 1.7.122 -> 1.8.40
 
 ### 0.5.4 (2015-12-29)
 

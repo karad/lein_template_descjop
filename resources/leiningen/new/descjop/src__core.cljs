@@ -1,4 +1,4 @@
-(ns {{sanitized}}.core
+(ns {{name}}.core
     (:require [cljs.nodejs :as nodejs]))
 
 (def path (nodejs/require "path"))
@@ -8,6 +8,8 @@
 (def BrowserWindow (nodejs/require "browser-window"))
 
 (def crash-reporter (nodejs/require "crash-reporter"))
+
+(def Os (nodejs/require "os"))
 
 (def *win* (atom nil))
 
@@ -39,5 +41,8 @@
          (.on @*win* "closed" (fn [] (reset! *win* nil))))))
 
 (nodejs/enable-util-print!)
+
+;;; "Linux" or "Darwin" or "Windows_NT"
+(.log js/console (str "Start descjop application on " (.type Os) "."))
 
 (set! *main-cli-fn* -main)
