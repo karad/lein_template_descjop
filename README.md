@@ -244,7 +244,7 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ## Change log
 
-### 0.6.0 (2016-04-10)
+### 0.6.2 (2016-04-10)
 
 Changes:
 
