@@ -12,9 +12,11 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 
 ## Requirements
 
-* leiningen 2.6.x +
-* node v0.12.x +
-* grunt v0.1.13 +
+- leiningen 2.6.x + 
+- node v0.12.x +
+- grunt v0.1.13 +
+
+**important : not support leiningen 2.5.x**
 
 ### (if you don't install grunt yet.)
 
