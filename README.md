@@ -248,6 +248,10 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ## Change log
 
+### 0.6.4 (2016-07-07)
+
+- update electron -> `1.2.5`
+
 ### 0.6.3 (2016-04-11)
 
 - fixed namespace problem.
