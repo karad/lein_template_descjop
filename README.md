@@ -13,7 +13,7 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 ## Requirements
 
 - leiningen 2.6.x + 
-- node v0.12.x +
+- node v6.x +
 - grunt v0.1.13 +
 
 **important : not support leiningen 2.5.x**
@@ -248,6 +248,10 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ## Change log
 
+### 0.6.4 (2016-07-07)
+
+- update electron -> `1.2.5`
+
 ### 0.6.3 (2016-04-11)
 
 - fixed namespace problem.
@@ -413,3 +417,4 @@ Distributed under the MIT License http://opensource.org/licenses/MIT .
 - [@kara_d](https://github.com/karad/)
 - [@mopemope](https://github.com/mopemope)
 - [@dvcrn](https://github.com/dvcrn)
+- [@toku345](https://github.com/toku345)
