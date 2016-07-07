@@ -5,9 +5,9 @@
 
 (def Electron (nodejs/require "electron"))
 
-(def BrowserWindow (nodejs/require "browser-window"))
+(def BrowserWindow (.-BrowserWindow Electron))
 
-(def crash-reporter (nodejs/require "crash-reporter"))
+(def crash-reporter (.-crashReporter Electron))
 
 (def Os (nodejs/require "os"))
 

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         "download-electron": {
-            version: "0.37.5",
+            version: "1.2.5",
             outputDir: "./electron",
             // if you want to download electron into project directory
             // downloadDir: ".electron-download",
