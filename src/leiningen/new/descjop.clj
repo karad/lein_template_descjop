@@ -3,9 +3,24 @@
   (:require [leiningen.new.templates :refer [renderer year project-name
                                              ->files sanitize-ns name-to-path
                                              multi-segment]]
-            [leiningen.core.main :as main]))
+            [leiningen.core.main :as main]
+            [clojure.java.io :as io])
+  (:import (java.util Properties)))
 
 (declare help-text)
+
+(defn read-project-version [groupid artifact]
+  (-> (doto (Properties.)
+        (.load (-> "META-INF/maven/%s/%s/pom.properties"
+                   (format groupid artifact)
+                   (io/resource)
+                   (io/reader))))
+      (.get "version")))
+
+(defn app-version
+  "app version"
+  []
+  (read-project-version "descjop" "lein-template"))
 
 (defn project-default
   "default descjop template."
@@ -160,6 +175,7 @@ you can use old version `$ lein new descjop myapp +reagent --template-version 0.
   [name & params]
   (cond
     (= name "help") (println help-text)
+    (= name "version") (println (str "descjop version is " (app-version)))
     (= (first params) "+om") (project-om name)
     (= (first params) "+reagent") (project-reagent name)
     :else (project-default name)))
@@ -384,6 +400,13 @@ $ lein descjop-once          # build JavaScript for develop and production
 $ lein descjop-once-dev      # build JavaScript for develop
 $ lein descjop-once-prod     # build JavaScript for production
 ```
-
-
 ")
+
+
+
+
+
+
+
+
+

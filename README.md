@@ -38,6 +38,21 @@ and you can use alias in project directory.
 $ lein descjop-help
 ```
 
+## Help
+
+You can display latest version.
+
+```
+$ lein new descjop version
+```
+
+and you can use alias in project directory.
+
+```
+$ lein descjop-help
+```
+
+
 ## New project from leiningen template
 
 ### Minimum project
@@ -247,6 +262,11 @@ $ lein descjop-once-prod     # build JavaScript for production
 - test suite
 
 ## Change log
+
+### 0.6.5 (2016-07-17)
+
+- add descjop command help alias `lein descjop-version`
+- update electron -> `1.2.7`
 
 ### 0.6.4 (2016-07-07)
 
