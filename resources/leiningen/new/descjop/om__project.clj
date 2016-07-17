@@ -16,6 +16,7 @@
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
+            "descjop-version" ["new" "descjop" "version"]
             "descjop-init" ["do"
                             ["shell" "npm" "install"]
                             ["shell" "grunt" "download-electron"]]

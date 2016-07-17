@@ -15,6 +15,7 @@
             [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]]
   :source-paths ["src_tools"]
   :aliases {"descjop-help" ["new" "descjop" "help"]
+            "descjop-version" ["new" "descjop" "version"]
             "descjop-init" ["do"
                             ["shell" "npm" "install"]
                             ["shell" "grunt" "download-electron"]]
