@@ -168,7 +168,7 @@ Successfully compiled "app/prod/js/front.js" in 29.94 seconds.
 
 ### step 4
 
-You can run Desctop application.
+You can run Desktop application.
 
 #### development mode
 
