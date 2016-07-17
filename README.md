@@ -418,3 +418,5 @@ Distributed under the MIT License http://opensource.org/licenses/MIT .
 - [@mopemope](https://github.com/mopemope)
 - [@dvcrn](https://github.com/dvcrn)
 - [@toku345](https://github.com/toku345)
+- [@qinxij](https://github.com/qinxij)
+
