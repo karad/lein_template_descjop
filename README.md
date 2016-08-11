@@ -263,6 +263,10 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ## Change log
 
+### 0.6.6 (2016-08-11)
+
+- update electron -> `1.3.3`
+
 ### 0.6.5 (2016-07-17)
 
 - add descjop command help alias `lein descjop-version`
