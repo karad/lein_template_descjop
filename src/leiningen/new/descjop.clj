@@ -390,6 +390,7 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 you can use aliases in project directory.
 
 ```
+$ lein descjop-version       # descjop version
 $ lein descjop-help          # descjop help
 $ lein descjop-init          # init project
 $ lein descjop-externs       # output externs for develop and production

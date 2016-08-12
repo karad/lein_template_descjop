@@ -241,6 +241,7 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 you can use aliases in project directory.
 
 ```
+$ lein descjop-version       # descjop version
 $ lein descjop-help          # descjop help
 $ lein descjop-init          # init project
 $ lein descjop-init-win      # init project for windows user
@@ -269,7 +270,7 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ### 0.6.5 (2016-07-17)
 
-- add descjop command help alias `lein descjop-version`
+- add descjop command version alias `lein descjop-version`
 - update electron -> `1.2.7`
 
 ### 0.6.4 (2016-07-07)
