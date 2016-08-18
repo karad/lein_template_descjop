@@ -1,6 +1,6 @@
 # {{name}}
 
-This project build by descjop v0.6.3
+This project build by descjop v0.7.0
 
 FIXME: description
 
@@ -56,7 +56,7 @@ $ cd YOUR_APP_NAME
 
 ## Project Directory
 
-see your app dir. looks like
+  see your app dir. looks like
 
 ```
 .
@@ -219,6 +219,7 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 you can use aliases in project directory.
 
 ```
+$ lein descjop-version       # descjop version
 $ lein descjop-help          # descjop help
 $ lein descjop-init          # init project
 $ lein descjop-init-win      # init project for windows user

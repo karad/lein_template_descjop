@@ -18,7 +18,7 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 
 **important : not support leiningen 2.5.x**
 
-### (if you don't install grunt yet.)
+### (If not already installed grunt.)
 
 ```
 $ npm install -g grunt-cli
@@ -234,6 +234,20 @@ On OS X:
 
 ```
 $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
+```
+
+## Package App
+
+### (If not already installed Electron-packager.)
+
+```
+$ npm install -g electron-packager
+```
+
+### run command
+
+```
+$ lein descjop-uberapp
 ```
 
 ## Aliases
