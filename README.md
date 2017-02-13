@@ -38,20 +38,13 @@ and you can use alias in project directory.
 $ lein descjop-help
 ```
 
-## Help
+## display latest version
 
 You can display latest version.
 
 ```
 $ lein new descjop version
 ```
-
-and you can use alias in project directory.
-
-```
-$ lein descjop-help
-```
-
 
 ## New project from leiningen template
 
