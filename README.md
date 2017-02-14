@@ -239,9 +239,37 @@ $ npm install -g electron-packager
 
 ### run command
 
+#### for OSX
+
 ```
-$ lein descjop-uberapp
+$ lein descjop-uberapp-osx
 ```
+
+#### for OSX app store
+
+```
+$ descjop-uberapp-app-store
+```
+
+#### for windows 32bit app
+
+```
+$ descjop-uberapp-win32
+```
+
+#### for windows 64bit app
+
+```
+$ descjop-uberapp-win64
+```
+
+#### for linux
+
+```
+$ descjop-uberapp-linux
+```
+
+
 
 ## Aliases
 
@@ -270,6 +298,18 @@ $ lein descjop-once-prod     # build JavaScript for production
 - test suite
 
 ## Change log
+
+### 0.7.0 (2017-02-14)
+
+- update electron -> `1.6.0`
+- update clojurescript 1.7.228 -> 1.9.473
+- some :dependencies update
+- add electron packager command
+    - descjop-uberapp-osx
+    - descjop-uberapp-app-store
+    - descjop-uberapp-linux
+    - descjop-uberapp-win64
+    - descjop-uberapp-win32
 
 ### 0.6.6 (2016-08-11)
 
