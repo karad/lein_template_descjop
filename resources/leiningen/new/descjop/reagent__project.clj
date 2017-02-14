@@ -46,11 +46,11 @@
                                  ["cljsbuild" "once" "prod-main"]
                                  ["cljsbuild" "once" "prod-front"]]
             ;; electron packager for production
-            "descjop-uberapp-osx" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=darwin" "--arch=x64" "--electron-version=1.3.3"]
-            "descjop-uberapp-app-store" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=mas" "--arch=x64" "--electron-version=1.3.3"]
-            "descjop-uberapp-linux" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=linux" "--arch=x64" "--electron-version=1.3.3"]
-            "descjop-uberapp-win64" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=x64" "--electron-version=1.3.3"]
-            "descjop-uberapp-win32" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=ia32" "--electron-version=1.3.3"]
+            "descjop-uberapp-osx" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=darwin" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-app-store" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=mas" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-linux" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=linux" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-win64" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-win32" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=ia32" "--electron-version=1.6.0"]
             }
   :hooks [leiningen.cljsbuild]
   :cljsbuild {:builds {:dev-main {:source-paths ["src"]

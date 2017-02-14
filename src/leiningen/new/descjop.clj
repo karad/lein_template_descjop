@@ -393,6 +393,7 @@ you can use aliases in project directory.
 $ lein descjop-version       # descjop version
 $ lein descjop-help          # descjop help
 $ lein descjop-init          # init project
+$ lein descjop-init-win      # init project for windows user
 $ lein descjop-externs       # output externs for develop and production
 $ lein descjop-externs-dev   # output externs for develop
 $ lein descjop-externs-prod  # output externs for production
