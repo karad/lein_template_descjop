@@ -1,6 +1,6 @@
 # {{name}}
 
-This project build by descjop v0.6.3
+This project build by descjop v0.7.0
 
 FIXME: description
 
@@ -31,6 +31,14 @@ and you can use alias in project directory.
 $ lein descjop-help
 ```
 
+## display latest version
+
+You can display latest version.
+
+```
+$ lein new descjop version
+```
+
 ## New project from leiningen template
 
 ### Minimum project
@@ -56,7 +64,7 @@ $ cd YOUR_APP_NAME
 
 ## Project Directory
 
-see your app dir. looks like
+  see your app dir. looks like
 
 ```
 .
@@ -214,11 +222,52 @@ On OS X:
 $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 ```
 
+## Package App
+
+### (If not already installed Electron-packager.)
+
+```
+$ npm install -g electron-packager
+```
+
+### run command
+
+#### for OSX
+
+```
+$ lein descjop-uberapp-osx
+```
+
+#### for OSX app store
+
+```
+$ descjop-uberapp-app-store
+```
+
+#### for windows 32bit app
+
+```
+$ descjop-uberapp-win32
+```
+
+#### for windows 64bit app
+
+```
+$ descjop-uberapp-win64
+```
+
+#### for linux
+
+```
+$ descjop-uberapp-linux
+```
+
 ## Aliases
 
 you can use aliases in project directory.
 
 ```
+$ lein descjop-version       # descjop version
 $ lein descjop-help          # descjop help
 $ lein descjop-init          # init project
 $ lein descjop-init-win      # init project for windows user

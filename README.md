@@ -18,7 +18,7 @@ A Leiningen template for Web based desktop application with Electron(atom-shell)
 
 **important : not support leiningen 2.5.x**
 
-### (if you don't install grunt yet.)
+### (If not already installed grunt.)
 
 ```
 $ npm install -g grunt-cli
@@ -38,20 +38,13 @@ and you can use alias in project directory.
 $ lein descjop-help
 ```
 
-## Help
+## display latest version
 
 You can display latest version.
 
 ```
 $ lein new descjop version
 ```
-
-and you can use alias in project directory.
-
-```
-$ lein descjop-help
-```
-
 
 ## New project from leiningen template
 
@@ -236,6 +229,48 @@ On OS X:
 $ ./electron/Electron.app/Contents/MacOS/Electron app/prod
 ```
 
+## Package App
+
+### (If not already installed Electron-packager.)
+
+```
+$ npm install -g electron-packager
+```
+
+### run command
+
+#### for OSX
+
+```
+$ lein descjop-uberapp-osx
+```
+
+#### for OSX app store
+
+```
+$ descjop-uberapp-app-store
+```
+
+#### for windows 32bit app
+
+```
+$ descjop-uberapp-win32
+```
+
+#### for windows 64bit app
+
+```
+$ descjop-uberapp-win64
+```
+
+#### for linux
+
+```
+$ descjop-uberapp-linux
+```
+
+
+
 ## Aliases
 
 you can use aliases in project directory.
@@ -263,6 +298,18 @@ $ lein descjop-once-prod     # build JavaScript for production
 - test suite
 
 ## Change log
+
+### 0.7.0 (2017-02-14)
+
+- update electron -> `1.6.0`
+- update clojurescript 1.7.228 -> 1.9.473
+- some :dependencies update
+- add electron packager command
+    - descjop-uberapp-osx
+    - descjop-uberapp-app-store
+    - descjop-uberapp-linux
+    - descjop-uberapp-win64
+    - descjop-uberapp-win32
 
 ### 0.6.6 (2016-08-11)
 

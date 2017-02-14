@@ -3,16 +3,16 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.228" :exclusions [org.apache.ant/ant]]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [sablono "0.3.6"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.473" :exclusions [org.apache.ant/ant]]
+                 [org.clojure/core.async "0.2.395"]
+                 [sablono "0.7.7"]
                  [org.omcljs/om "0.9.0"]
-                 [figwheel "0.4.0"]]
-  :plugins [[lein-cljsbuild "1.1.3"]
+                 [figwheel "0.5.9"]]
+  :plugins [[lein-cljsbuild "1.1.5"]
             [lein-externs "0.1.6"]
-            [lein-shell "0.4.1"]
-            [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]]
+            [lein-shell "0.5.0"]
+            [lein-figwheel "0.5.9" :exclusions [org.clojure/core.cache]]]
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
@@ -45,7 +45,14 @@
                                 ["cljsbuild" "once" "dev-front"]]
             "descjop-once-prod" ["do"
                                  ["cljsbuild" "once" "prod-main"]
-                                 ["cljsbuild" "once" "prod-front"]]}
+                                 ["cljsbuild" "once" "prod-front"]]
+            ;; electron packager for production
+            "descjop-uberapp-osx" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=darwin" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-app-store" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=mas" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-linux" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=linux" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-win64" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=x64" "--electron-version=1.6.0"]
+            "descjop-uberapp-win32" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=ia32" "--electron-version=1.6.0"]
+            }
   :cljsbuild {:builds {:dev-main {:source-paths ["src"]
                                   :incremental true
                                   :jar true
@@ -60,8 +67,7 @@
 
                                              ;; no optimize compile (dev)
                                              ;; :optimizations :none
-                                             ;; when no optimize uncomment
-                                             ;; :output-dir "app/dev/js/out"
+                                             :output-dir "app/dev/js/out_main"
 
                                              ;; simple compile (dev)
                                              :optimizations :simple
@@ -84,8 +90,7 @@
 
                                               ;; no optimize compile (dev)
                                               :optimizations :none
-                                              ;; when no optimize uncomment
-                                              :output-dir "app/dev/js/out"
+                                              :output-dir "app/dev/js/out_front"
 
                                               ;; simple compile (dev)
                                               ;;:optimizations :simple
@@ -110,8 +115,7 @@
 
                                               ;; no optimize compile (dev)
                                               ;;:optimizations :none
-                                              ;; when no optimize uncomment
-                                              ;;:output-dir "app/prod/js/out"
+                                              :output-dir "app/prod/js/out_main"
 
                                               ;; simple compile (dev)
                                               :optimizations :simple
@@ -134,8 +138,7 @@
 
                                                ;; no optimize compile (dev)
                                                ;;:optimizations :none
-                                               ;; when no optimize uncomment
-                                               ;;:output-dir "app/prod/js/out"
+                                               :output-dir "app/prod/js/out_front"
 
                                                ;; simple compile (dev)
                                                :optimizations :simple
