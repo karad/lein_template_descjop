@@ -269,6 +269,40 @@ $ descjop-uberapp-win64
 $ descjop-uberapp-linux
 ```
 
+## How to Upgrade to new Electron version
+
+You can change Electron version in Gruntfile.js.
+
+```
+module.exports = function(grunt) {
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        "download-electron": {
+            version: "1.3.2", // change Electron version 1.3.2 -> 1.3.3
+            outputDir: "./electron", 
+            rebuild: true
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-download-electron');
+
+};
+```
+
+and re-run
+
+for linux / mac
+
+```
+$ lein descjop-init
+```
+
+for windows
+
+```
+$ lein descjop-init-win
+```
 
 
 ## Aliases
