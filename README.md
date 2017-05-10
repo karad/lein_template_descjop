@@ -333,6 +333,11 @@ $ lein descjop-once-prod     # build JavaScript for production
 
 ## Change log
 
+### 0.7.2 (2017-05-10)
+
+- update electron -> `1.6.6`
+- fix package build alias
+
 ### 0.7.1 (2017-02-21)
 
 - update Readme.txt for Upgrading Electron version.
