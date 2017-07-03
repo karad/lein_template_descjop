@@ -50,7 +50,9 @@
             "descjop-uberapp-linux" ["shell" "electron-packager" "./app/prod" "{{name}}" "--platform=linux" "--arch=x64" "--electron-version=1.6.6"]
             "descjop-uberapp-win64" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=x64" "--electron-version=1.6.6"]
             "descjop-uberapp-win32" ["shell" "cmd.exe" "/c" "electron-packager" "./app/prod" "{{name}}" "--platform=win32" "--arch=ia32" "--electron-version=1.6.6"]
-            }
+            "descjop-run-osx"   ["shell" "./electron/Electron.app/Contents/MacOS/Electron" "app/dev"]
+            "descjop-run-win"   ["shell" ".\\electron\\electron.exe" "app/dev"]
+            "descjop-run-linux" ["shell" "./electron/electron" "app/dev"]}
   :cljsbuild {:builds {:dev-main {:source-paths ["src"]
                                   :incremental true
                                   :jar true
