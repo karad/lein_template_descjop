@@ -1,0 +1,13 @@
+{
+    "name": "hello-desc2",
+    "version": "0.0.0",
+    "description": "",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-download-electron": "^2.1.4",
+        "closurecompiler-externs": "^1.0.4",
+        "electron-packager": "^8.5.1"
+    },
+    "license": "MIT",
+    "repository" : "YOUR_OWN_REPOSITORY"
+}
